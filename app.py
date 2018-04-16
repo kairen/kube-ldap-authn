@@ -92,7 +92,7 @@ def authn():
                         [ app.config['LDAP_USER_NAME_ATTRIBUTE'],
                           app.config['LDAP_USER_UID_ATTRIBUTE'] ])
     except ldap.LDAPError as e:
-        logger.info("LDAP search error: " + str(e))
+        logger.info("LDAP user search error: " + str(e))
         return auth_error
 
     if len(r) != 1:
@@ -110,7 +110,7 @@ def authn():
                         ldap.SCOPE_SUBTREE, group_search,
                         [ app.config['LDAP_GROUP_NAME_ATTRIBUTE'] ])
     except ldap.LDAPError as e:
-        logger.info("LDAP search error: " + str(e))
+        logger.info("LDAP group search error: " + str(e))
         return auth_error
 
     groups = [
