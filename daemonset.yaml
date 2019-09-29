@@ -1,7 +1,7 @@
 # This is an example DaemonSet configuration for kube-ldap-authn.  It runs it
 # on the master's host network on port 8087.
 
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: kube-ldap-authn
